@@ -30,7 +30,7 @@
     </Key>
     <Key ID="STR_IWAC_TIMEOUT_INTERRUPT">
       <English>%1 Welcome back %2. Shutting down timeout... Good luck!</English>
-      <German>%1 Willkommen zurück %2! Auszeit für abgeschalten... Viel Glück!</German>
+      <German>%1 Willkommen zurück %2! Auszeit wird abgeschaltet... Viel Glück!</German>
     </Key>
   </Package>
 </Project>
