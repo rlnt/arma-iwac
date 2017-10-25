@@ -137,7 +137,7 @@ if (isServer) then {
   // :: For dev only
   // -------------------------------------------------------------------------
   // :: Use debug log in RPT? (mostly you don't need it)
-  iben_wai_ACdevmode = true;
+  iben_wai_ACdevmode = false;
 
   if (iben_wai_ACdevmode) then {
     wai_timeout_distance = 1000;
