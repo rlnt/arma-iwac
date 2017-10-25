@@ -35,7 +35,7 @@ if (isServer) then {
   // -------------------------------------------------------------------------
   // :: Set delay before system adds player to register when crosses claiming zone
   //    >> Important for just passing by players
-  iben_wai_ACsafeClaimDelay = 10;
+  iben_wai_ACsafeClaimDelay = 60;
 
   // -------------------------------------------------------------------------
   // >> How long should claiming right be reserved for player outside zone or dead,
@@ -49,7 +49,7 @@ if (isServer) then {
   // >> IMPORTANT: If 'iben_wai_ACdistance' > 'wai_timeout_distance', mission
   //    could dissappear no matter player has claimed it or not - choose distance
   //    wisely...
-  iben_wai_ACtimeout = 60;
+  iben_wai_ACtimeout = 300;
 
   // -------------------------------------------------------------------------
   // :: Admin suport (static solution for general use)
