@@ -47,8 +47,6 @@ Created by @iben for @totis
   // >> If you don't want to use timeout, just set to 0 and claiming right will
   //    be free immediately when player is gone...
   // >> If there is no timeout and player is in zone, status is "Active"
-  // >> Remember, if someone is just passing by, other will need to wait until
-  //    timeout is off. Solution for this maybe in next version...
   // >> Remember, timeout countdown is dynamic (updated on map in real time)
   // >> IMPORTANT: If 'iben_wai_ACdistance' > 'wai_timeout_distance', mission
   //    could dissappear no matter player has claimed it or not - choose distance
