@@ -28,7 +28,7 @@ Created by @iben for @totis
   // -------------------------------------------------------------------------
   // :: Set delay before system adds player to register when crosses claiming zone
   //    >> Important for just passing by players
-  iben_wai_ACsafeClaimDelay = 10;
+  iben_wai_ACsafeClaimDelay = 60;
 
   // -------------------------------------------------------------------------
   // >> How long should claiming right be reserved for player outside zone or dead,
@@ -42,7 +42,7 @@ Created by @iben for @totis
   // >> IMPORTANT: If 'iben_wai_ACdistance' > 'wai_timeout_distance', mission
   //    could dissappear no matter player has claimed it or not - choose distance
   //    wisely...
-  iben_wai_ACtimeout = 60;
+  iben_wai_ACtimeout = 300;
 
   // -------------------------------------------------------------------------
   // :: Admin suport (static solution for general use)
@@ -127,4 +127,16 @@ Created by @iben for @totis
   wai_avoid_town = 0;
   wai_avoid_road = 0;
   wai_avoid_water = 50;
+
+  // -------------------------------------------------------------------------
+  // :: For dev only
+  // -------------------------------------------------------------------------
+  // :: Use debug log in RPT? (mostly you don't need it)
+  iben_wai_ACdevmode = true;
+
+  if (iben_wai_ACdevmode) then {
+    wai_timeout_distance = 1000;
+    wai_mission_timeout = [300,400];
+    wai_mission_timer = [130,280];
+  };
 ```
