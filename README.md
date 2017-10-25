@@ -9,6 +9,7 @@ Created by @iben for @totis
 + DayZ Epoch developers, collaborators and contributors
 + JasonTM + all authors of WAI mission system (@f3cuk,@ebayShopper,@Caveman,@salival and many more...)
 + @salival for remote msg scipt from ZSC
++ @DAmNRelentless for German translation
 + ... all great guys helping make WAI better. Thank you all for your great job!
 
 ---
