@@ -2,6 +2,17 @@
 Autoclaim system for WAI (DayZ Epoch 1.0.6.2+)
 Created by @iben for @totis
 
+## CREDITS
+
+**All credit belongs to all authors of used source files:**
+
++ DayZ Epoch developers, collaborators and contributors
++ JasonTM + all authors of WAI mission system (@f3cuk,@ebayShopper,@Caveman,@salival and many more...)
++ @salival for remote msg scipt from ZSC
++ ... all great guys helping make WAI better. Thank you all for your great job!
+
+---
+
 ## OPTIONS
 
 ```c
