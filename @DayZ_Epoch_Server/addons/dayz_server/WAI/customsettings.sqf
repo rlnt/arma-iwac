@@ -78,7 +78,7 @@ if (isServer) then {
   iben_wai_ACplotRestriction = true;
 
   // :: What distance from plotpole is not allowed?
-  iben_wai_ACplotRange = 30;
+  iben_wai_ACplotRange = (DZE_PlotPole select 0);
 
   // -------------------------------------------------------------------------
   // >> Should server sent private msg to player? (Other playes will not see it...)
