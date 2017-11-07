@@ -291,7 +291,7 @@ _:( ... I know... bye_
 
 ---
 
-[scriptthread]: https://epochmod.com/forum/topic/43949-re-release-paint-vehicles-script-using-single-currency-updated-to-1061-and-upgraded/ "Go to source"
+[scriptthread]: https://epochmod.com/forum/topic/44646-iwac-autoclaim-addon-for-wai-v10/ "Go to source"
 [epochdevs]: https://github.com/EpochModTeam/DayZ-Epoch "Go to source"
 [remotemsg]: https://github.com/infobeny/ZSC/blob/master/dayz_code/compile/remote_message.sqf "Go to source"
 [germanlng]: https://github.com/infobeny/IWAC/pull/1 "Go to source"
