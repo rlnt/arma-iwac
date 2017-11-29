@@ -1,6 +1,6 @@
 # IWAC - addon for WAI Mission System
 
-**Last update: [2017-11-07], v1.0** ([see changelog](#changelog))
+**Last update: [2017-11-29], v1.1** ([see changelog](#changelog))
 
 ---
 
@@ -288,6 +288,7 @@ _:( ... I know... bye_
 | Date         | Version | Description                                                                                           |
 | :---         | :---    | :---                                                                                                  |
 | [2017-11-07] | v1.0    | Initial release                                                                                       |
+| [2017-11-29] | v1.1    | Improved: safe way to load custom settings (init.sqf)                                                 |
 
 ---
 
