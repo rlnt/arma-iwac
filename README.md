@@ -1,6 +1,6 @@
 # IWAC - addon for WAI Mission System
 
-**Last update: [2017-11-29], v1.1** ([see changelog](#changelog))
+**Last update: [2017-12-31], v1.2 (Updated for Epoch 1.0.6.2 & WAI 2.2.2)** ([see changelog](#changelog))
 
 ---
 
@@ -71,7 +71,7 @@ ok.. let's start with somenthing I can picture in my mind. Do you have any scree
 **A: mr. no_name**<br>
 yeah, sure...<br>
 
-![IWAC Showcase](pic01.png)
+![IWAC Showcase](Preview/pic01.png)
 
 ---
 
@@ -108,7 +108,7 @@ wai_avoid_traders = (iben_wai_ACdistance + 200 + 500);
 // ... also see picture bellow:
 ```
 
-![IWAC Mission Map Placement](pic02.png)
+![IWAC Mission Map Placement](Preview/pic02.png)
 
 ---
 
@@ -154,7 +154,7 @@ iben_wai_ACmarkerFlagClass = "FlagCarrierINDFOR_EP1";
 // ... see the picture bellow:
 ```
 
-![IWAC Mission Flag Placement](pic03.png)
+![IWAC Mission Flag Placement](Preview/pic03.png)
 
 ---
 
@@ -289,6 +289,7 @@ _:( ... I know... bye_
 | :---         | :---    | :---                                                                                                  |
 | [2017-11-07] | v1.0    | Initial release                                                                                       |
 | [2017-11-29] | v1.1    | Improved: safe way to load custom settings (init.sqf)                                                 |
+| [2018-12-31] | v1.2    | Updated to Epoch 1.0.6.2 & WAI 2.2.2                                                                  |
 
 ---
 

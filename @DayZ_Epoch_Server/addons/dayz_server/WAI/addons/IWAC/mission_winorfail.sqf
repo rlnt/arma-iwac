@@ -1,9 +1,9 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> mission_winorfail.sqf
 // ===========================================================================
-// [last update: 2017-10-22]
+// [last update: 2017-12-31]
 // ===========================================================================
-// Extended for IWAC by @iben for WAI, DayZ Epoch 1.0.6.2+
+// Extended for IWAC by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
 // :: Original source: 'dayz_server\WAI\compile\mission_winorfail.sqf'
 // ===========================================================================
@@ -44,20 +44,17 @@ if (isServer) then {
     };
   } count allUnits;
   // -------------------------------------------------------------------------
-  if (wai_radio_announce) then {
+  if (wai_mission_announce == "Radio") then {
     RemoteMessage = ["radio","[RADIO] " + _msgstart];
     publicVariable "RemoteMessage";
-  } else {
+  };
+  if (wai_mission_announce == "DynamicText") then {
+    RemoteMessage = ["dynamic_text", ["Mission Announcement",_msgstart]];
+    publicVariable "RemoteMessage";
+  };
+  if (wai_mission_announce == "titleText") then {
     [nil,nil,rTitleText,_msgstart,"PLAIN",10] call RE;
   };
-  // -------------------------------------------------------------------------
-  clearWeaponCargoGlobal _crate;
-  clearMagazineCargoGlobal _crate;
-  // -------------------------------------------------------------------------
-  _crate setVariable ["ObjectID","1",true];
-  _crate setVariable ["permaLoot",true];
-  // -------------------------------------------------------------------------
-  _crate addEventHandler ["HandleDamage", {}];
   // -------------------------------------------------------------------------
   markerready = true;
   // -------------------------------------------------------------------------
@@ -346,10 +343,15 @@ if (isServer) then {
       } forEach _delete_mines;
     };
     // -----------------------------------------------------------------------
-    if (wai_radio_announce) then {
+    if (wai_mission_announce == "Radio") then {
       RemoteMessage = ["radio","[RADIO] " + _msgwin];
       publicVariable "RemoteMessage";
-    } else {
+    };
+    if (wai_mission_announce == "DynamicText") then {
+      RemoteMessage = ["dynamic_text", ["Mission Announcement", _msgwin]];
+      publicVariable "RemoteMessage";
+    };
+    if (wai_mission_announce == "titleText") then {
       [nil,nil,rTitleText,_msgwin,"PLAIN",10] call RE;
     };
     // -----------------------------------------------------------------------
@@ -412,10 +414,15 @@ if (isServer) then {
       };
     } forEach _baseclean + ((wai_mission_data select _mission) select 2) + [_crate];
     // -----------------------------------------------------------------------
-    if (wai_radio_announce) then {
+    if (wai_mission_announce == "Radio") then {
       RemoteMessage = ["radio","[RADIO] " + _msglose];
       publicVariable "RemoteMessage";
-    } else {
+    };
+    if (wai_mission_announce == "DynamicText") then {
+      RemoteMessage = ["dynamic_text", ["Mission Announcement", _msglose]];
+      publicVariable "RemoteMessage";
+    };
+    if (wai_mission_announce == "titleText") then {
       [nil,nil,rTitleText,_msglose,"PLAIN",10] call RE;
     };
   };

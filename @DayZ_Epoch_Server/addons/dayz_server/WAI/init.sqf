@@ -1,9 +1,9 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> init.sqf
 // ===========================================================================
-// [last update: 2017-10-22]
+// [last update: 2017-12-31]
 // ===========================================================================
-// Extended for IWAC by @iben for WAI, DayZ Epoch 1.0.6.2+
+// Extended for IWAC by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
 // :: Original source: 'dayz_server\WAI\init.sqf'
 // ===========================================================================
@@ -53,6 +53,12 @@ if (isServer) then {
   ExecVM "\z\addons\dayz_server\WAI\config.sqf";
   waitUntil {WAIconfigloaded};
   diag_log "WAI: AI Config File Loaded";
+  if (use_staticspawnpoints) then {
+    ExecVM "\z\addons\dayz_server\WAI\configs\spawnpoints.sqf";
+  };
+  if (use_blacklist) then {
+    ExecVM "\z\addons\dayz_server\WAI\configs\blacklist.sqf";
+  };
   if ((preProcessFileLineNumbers ("\z\addons\dayz_server\WAI\customsettings.sqf")) != "") then {
     ExecVM "\z\addons\dayz_server\WAI\customsettings.sqf";
     waitUntil {WAIcustomConfigloaded};

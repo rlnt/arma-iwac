@@ -1,9 +1,9 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> customsettings.sqf
 // ===========================================================================
-// [last update: 2017-10-22]
+// [last update: 2017-12-31]
 // ===========================================================================
-// created by @iben for WAI, DayZ Epoch 1.0.6.2+
+// created by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
 if (isServer) then {
   // -------------------------------------------------------------------------
@@ -30,7 +30,7 @@ if (isServer) then {
   // -------------------------------------------------------------------------
   // >> In what distance should autoclaim happen?
   // >> Remember, distance is valid for 'z' axis too (air vehicles)
-  iben_wai_ACdistance = 1300;
+  iben_wai_ACdistance = 1200;
 
   // -------------------------------------------------------------------------
   // :: Set delay before system adds player to register when crosses claiming zone
@@ -132,6 +132,7 @@ if (isServer) then {
   wai_avoid_town = 0;
   wai_avoid_road = 0;
   wai_avoid_water = 50;
+  wai_timeout_distance = iben_wai_ACdistance;
 
   // -------------------------------------------------------------------------
   // :: For dev only
@@ -140,9 +141,8 @@ if (isServer) then {
   iben_wai_ACdevmode = false;
 
   if (iben_wai_ACdevmode) then {
-    wai_timeout_distance = 1000;
-    wai_mission_timeout = [300,400];
-    wai_mission_timer = [130,280];
+    wai_mission_timeout = [310,320];
+    wai_mission_timer = [130,140];
   };
 
   // -------------------------------------------------------------------------

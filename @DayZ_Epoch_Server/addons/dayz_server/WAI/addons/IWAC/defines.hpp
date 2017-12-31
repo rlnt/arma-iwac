@@ -1,13 +1,13 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> defines.hpp
 // ===========================================================================
-// [last update: 2017-10-22]
+// [last update: 2017-12-31]
 // ===========================================================================
-// created by @iben for WAI, DayZ Epoch 1.0.6.2+
+// created by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
 // :: ID info
 #define IWAC_NAME "IBEN WAI AUTOCLAIM ADDON"
-#define IWAC_VERS "v1.0"
+#define IWAC_VERS "v1.2"
 // ===========================================================================
 // ...
 // ---------------------------------------------------------------------------
@@ -76,6 +76,6 @@
 
 // ---------------------------------------------------------------------------
 // :: Remote msg pattern
-#define RMSG(PLI,MSG) if (wai_radio_announce && iben_wai_ACplayerMsg) then { RemoteMessage = [RMSG_TYPE, [PLI,MSG]]; publicVariable "RemoteMessage"; }
+#define RMSG(PLI,MSG) if (iben_wai_ACplayerMsg) then { RemoteMessage = [RMSG_TYPE, [PLI,MSG]]; publicVariable "RemoteMessage"; }
 
 // === :: [IWAC] IBEN WAI AUTOCLAIM >> defines.hpp :: END
