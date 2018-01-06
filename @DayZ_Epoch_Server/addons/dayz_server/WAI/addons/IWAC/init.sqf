@@ -1,7 +1,7 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> init.sqf
 // ===========================================================================
-// [last update: 2017-12-31]
+// [last update: 2018-01-05]
 // ===========================================================================
 // Extended for IWAC by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
@@ -30,6 +30,7 @@ if (isServer) then {
   wai_mission_data = [];
   // -------------------------------------------------------------------------
   iben_wai_ACclaimers = [];                                                    // IWAC
+  iben_wai_ACprotectedCoord = [];                                              // IWAC
   // -------------------------------------------------------------------------
   wai_hero_mission = [];
   wai_bandit_mission = [];
@@ -57,7 +58,7 @@ if (isServer) then {
     };
   } count wai_bandit_missions;
   // -------------------------------------------------------------------------
-  while {true} do {
+  while {1 == 1} do {
     _cnt = {alive _x} count playableUnits;
     _currTime = floor(time);
     if (isNil "_h_missionTime") then { _h_missionTime = ((wai_mission_timer select 0) + random((wai_mission_timer select 1) - (wai_mission_timer select 0))); };

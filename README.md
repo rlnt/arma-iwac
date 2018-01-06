@@ -1,6 +1,6 @@
 # IWAC - addon for WAI Mission System
 
-**Last update: [2017-12-31], v1.2 (Updated for Epoch 1.0.6.2 & WAI 2.2.2)** ([see changelog](#changelog))
+**Last update: [2017-01-05], v1.3 (Updated for Epoch 1.0.6.2 & WAI 2.2.2)** ([see changelog](#changelog))
 
 ---
 
@@ -290,6 +290,7 @@ _:( ... I know... bye_
 | [2017-11-07] | v1.0    | Initial release                                                                                       |
 | [2017-11-29] | v1.1    | Improved: safe way to load custom settings (init.sqf)                                                 |
 | [2018-12-31] | v1.2    | Updated to Epoch 1.0.6.2 & WAI 2.2.2                                                                  |
+| [2018-01-05] | v1.3    | Mission overlapping fix                                                                               |
 
 ---
 

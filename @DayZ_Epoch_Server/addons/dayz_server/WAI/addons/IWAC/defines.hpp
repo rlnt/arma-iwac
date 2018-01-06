@@ -1,13 +1,13 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> defines.hpp
 // ===========================================================================
-// [last update: 2017-12-31]
+// [last update: 2018-01-05]
 // ===========================================================================
 // created by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
 // :: ID info
 #define IWAC_NAME "IBEN WAI AUTOCLAIM ADDON"
-#define IWAC_VERS "v1.2"
+#define IWAC_VERS "v1.3"
 // ===========================================================================
 // ...
 // ---------------------------------------------------------------------------
@@ -31,6 +31,7 @@
 // ---------------------------------------------------------------------------
 // :: Debug pattern
 #define DBG(ID,MSG) diag_log format ["=== [%1, %2] || DEBUG [%3] >> %4",IWAC_NAME,IWAC_VERS,ID,MSG]
+#define WBG(ID,MSG) if (debug_mode) then { DBG(ID,MSG) }
 
 // ---------------------------------------------------------------------------
 // :: Common strings
@@ -48,6 +49,10 @@
 // ---------------------------------------------------------------------------
 // :: IWAC claimers arr > set template
 #define IWACS(OR,VL) iben_wai_ACclaimers set [OR, VL]
+
+// ---------------------------------------------------------------------------
+// :: IWAC mission protected coord arr > set template
+#define IWACP(TM,PO,MR) iben_wai_ACprotectedCoord set [count iben_wai_ACprotectedCoord, [TM,PO,MR]];
 
 // ---------------------------------------------------------------------------
 // :: WAI mission data base template

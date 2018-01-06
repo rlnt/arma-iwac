@@ -1,7 +1,7 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> init.sqf
 // ===========================================================================
-// [last update: 2017-12-31]
+// [last update: 2018-01-05]
 // ===========================================================================
 // Extended for IWAC by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
@@ -21,7 +21,10 @@ if (isServer) then {
   dynamic_crate = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\dynamic_crate.sqf";
   ai_monitor = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\ai_monitor.sqf";
   vehicle_monitor = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\vehicle_monitor.sqf";
-  find_position = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\find_position.sqf";
+  // ---------------------------------------------------------------------------
+  // :: IWAC
+  find_position = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\addons\IWAC\find_position.sqf";
+  // ---------------------------------------------------------------------------
   load_ammo = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\load_ammo.sqf";
   call compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\functions.sqf";
   if (isNil("DZMSInstalled")) then {

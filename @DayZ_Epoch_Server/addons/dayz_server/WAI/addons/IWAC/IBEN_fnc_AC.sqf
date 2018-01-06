@@ -1,7 +1,7 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> IBEN_fnc_AC.sqf
 // ===========================================================================
-// [last update: 2017-12-31]
+// [last update: 2018-01-05]
 // ===========================================================================
 // created by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
@@ -175,6 +175,24 @@ IBEN_fnc_deleteFlag = {
   };
   // -------------------------------------------------------------------------
   _del
+};
+
+// ---------------------------------------------------------------------------
+IBEN_fnc_cleanProtectedCoord = {
+  private "_ret";
+  _ret = 0;
+  if ((count iben_wai_ACprotectedCoord) == 0) exitWith {_ret};
+  // -------------------------------------------------------------------------
+  {
+    if ((diag_tickTime - (_x select 0)) > iben_wai_ACcoordProtectorTimer) then {
+      iben_wai_ACprotectedCoord set [_forEachIndex, -1];
+    };
+  } forEach iben_wai_ACprotectedCoord;
+  // -------------------------------------------------------------------------
+  iben_wai_ACprotectedCoord = iben_wai_ACprotectedCoord - [-1];
+  _ret = (count iben_wai_ACprotectedCoord);
+  // -------------------------------------------------------------------------
+  _ret
 };
 
 // === :: [IWAC] IBEN WAI AUTOCLAIM >> IBEN_fnc_AC.sqf :: END

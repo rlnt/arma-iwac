@@ -1,7 +1,7 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> customsettings.sqf
 // ===========================================================================
-// [last update: 2017-12-31]
+// [last update: 2018-01-05]
 // ===========================================================================
 // created by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
@@ -125,6 +125,26 @@ if (isServer) then {
   iben_wai_ACmarkerFlagClass = "FlagCarrierINDFOR_EP1";
 
   // -------------------------------------------------------------------------
+  // >> Mission coordinates protector timer
+  // >> This option is covering following WAI problem:
+  //    Once mission was completed, mission marker in 'wai_mission_markers' array
+  //    is immediately deleted. This could cause situation in which another (new)
+  //    mission spawns at the same spot (...and player is still at the crate from
+  //    previous mission) - reason: marker is no longer "protected" in find_position fnc.
+  // >> When this situation could happen:
+  //    Mostly if you are using static spawn points with lower number of static points
+  //    and higher number of concurrent mission over the map. It's rare, but this issue
+  //    was already reported before.
+  // >> Set to 0 if you don't want to use this kind of protection.
+  // >> If you set > 0, mission coordinates stays protected from another mission spawn
+  //    in 'wai_avoid_missions' radius for given time in seconds.
+  // >> Check is very performace friendly. It's applied only in case 'iben_wai_ACcoordProtectorTimer' > 0
+  //    and 'iben_wai_ACprotectedCoord' array is not empy!
+  // >> @for dev: this solution should stay as temp fix. This should be fixed in WAI core
+  //    according to point of WAI repo owner view and dev plans.
+  iben_wai_ACcoordProtectorTimer = 300; // @since v1.3
+
+  // -------------------------------------------------------------------------
   // :: Recommended settings for WAI
   wai_mission_system = true;
   wai_avoid_missions = ((iben_wai_ACdistance * 2) + 500);
@@ -141,8 +161,17 @@ if (isServer) then {
   iben_wai_ACdevmode = false;
 
   if (iben_wai_ACdevmode) then {
-    wai_mission_timeout = [310,320];
+    wai_mission_timeout = [500,600];
     wai_mission_timer = [130,140];
+    // :: find_position attempts limiter >> default 200.
+    // :: If you will get RPT (server) info about reaching limit, think what
+    //    needs to be done - (a) increase limit?; or (b) adjust values? (see RPT log which one)
+    // :: There is no good general advice - depends on map, custom traders etc. That is why
+    //    I set lower attemt 50 as default - to be sure you're warned in time about fact,
+    //    WAI has to cycle hard to get mission spawn position.
+    // :: You can set 'iben_wai_ACdevmode' to true and adjust 'iben_waiACfindPosLimiter'
+    //    for testing.
+    iben_waiACfindPosLimiter = 999; // @since v1.3
   };
 
   // -------------------------------------------------------------------------
