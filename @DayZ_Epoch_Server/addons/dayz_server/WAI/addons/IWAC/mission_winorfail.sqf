@@ -146,7 +146,7 @@ if (isServer) then {
           _ciz = false;
           RMSG(CML(_cls,1),FSTR3(STRLO("STR_IWAC_TIMEOUT_START"),ACSTR,CMNAME(_mission),(ceil (_ctv - (diag_tickTime - iben_wai_ACtimeout)))));
         };
-        // ---------------------------------------------------------------------  
+        // ---------------------------------------------------------------------
         _ito = ((_ctv != 0) && {(diag_tickTime - iben_wai_ACtimeout) < _ctv});
         // ---------------------------------------------------------------------
         if (_ito) then {
@@ -159,7 +159,7 @@ if (isServer) then {
             RMSG(CML(_cls,1),FSTR2(STRLO("STR_IWAC_TIMEOUT_INTERRUPT"),ACSTR,CMNAME(_mission)));
           };
         };
-        // ---------------------------------------------------------------------  
+        // ---------------------------------------------------------------------
         if (!_ito && {!_ciz}) then {
           _ctv = 0;
           _ciz = false;
@@ -197,7 +197,7 @@ if (isServer) then {
           _cts = diag_tickTime;
           // --------------------------------------------------------------------
           _pst = [[_cls,_wls,_rls], _pid, 1] call IBEN_fnc_checkPlrStatus;
-  
+
           _fnd = (_pst select 0);
           _pia = (_pst select 1);
           // --------------------------------------------------------------------

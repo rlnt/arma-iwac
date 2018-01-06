@@ -12,10 +12,10 @@ if (isServer) then {
   #include "defines.hpp"
 
   // -------------------------------------------------------------------------
-  private ["_validspot","_maxAttemtps","_attempt"];
+  private ["_validspot","_attempt"];
   markerready = false;
   _validspot  = false;
-  _maxAttemtps = [iben_waiACfindPosLimiter,200] select (isNil "iben_waiACfindPosLimiter");
+  if (isNil "iben_waiACfindPosLimiter") then {iben_waiACfindPosLimiter = 200};
   _attempt = 0;
 
   // -------------------------------------------------------------------------
@@ -23,7 +23,7 @@ if (isServer) then {
   if (use_staticspawnpoints) exitWith {
     // -----------------------------------------------------------------------
     private ["_i","_position"];
-    for "_i" from 1 to _maxAttemtps do {
+    for "_i" from 1 to iben_waiACfindPosLimiter do {
       _position = staticspawnpoints call BIS_fnc_selectRandom;
       _validspot = true;
       // ---------------------------------------------------------------------
@@ -51,11 +51,11 @@ if (isServer) then {
       };
       // ---------------------------------------------------------------------
       if (_validspot) exitWith {
-        WBG("find_position.sqf",FSTR3("Loop complete, valid position >> %1 >> in %2/%3 attempts",_position,_i,_maxAttemtps));
+        WBG("find_position.sqf",FSTR3("Loop complete, valid position >> %1 >> in %2/%3 attempts",_position,_i,iben_waiACfindPosLimiter));
       };
       // ---------------------------------------------------------------------
-      if (!_validspot && {_i == _maxAttemtps}) exitWith {
-        WBG("find_position.sqf",FSTR1("You've reached max attempts (%1) to find mission spawn point. Consider using option 'use_staticspawnpoints' in your 'config.sqf', or adjust these variables: 'iben_wai_ACdistance',wai_avoid_missions', 'wai_avoid_traders', 'wai_avoid_town', 'wai_avoid_road' and 'wai_avoid_water'. Remember: maps such as 'napf' cannot use 'iben_wai_ACdistance = 1200'. This map is not big enough (measure it yourself and then consider all traders, water, roads etc. Think about it!)",_maxAttemtps));
+      if (!_validspot && {_i == iben_waiACfindPosLimiter}) exitWith {
+        WBG("find_position.sqf",FSTR1("You've reached max attempts (%1) to find mission spawn point. Consider to adjust these variables: 'iben_wai_ACdistance',wai_avoid_missions', 'wai_avoid_traders', 'wai_avoid_town', 'wai_avoid_road' and 'wai_avoid_water'. Think about all traders, water, roads etc.",iben_waiACfindPosLimiter));
       };
       // ---------------------------------------------------------------------
     };
@@ -73,7 +73,7 @@ if (isServer) then {
   ] select (use_blacklist);
 
   // -------------------------------------------------------------------------
-  for "_y" from 1 to _maxAttemtps do {
+  for "_y" from 1 to iben_waiACfindPosLimiter do {
     _position = _safepos call BIS_fnc_findSafePos;
     _validspot  = true;
     // -----------------------------------------------------------------------
@@ -137,11 +137,11 @@ if (isServer) then {
     };
     // -----------------------------------------------------------------------
     if (_validspot) exitWith {
-      WBG("find_position.sqf",FSTR3("Loop complete, valid position >> %1 >> in %2/%3 attempts",_position,_y,_maxAttemtps));
+      WBG("find_position.sqf",FSTR3("Loop complete, valid position >> %1 >> in %2/%3 attempts",_position,_y,iben_waiACfindPosLimiter));
     };
     // ---------------------------------------------------------------------
-    if (!_validspot && {_y == _maxAttemtps}) exitWith {
-      WBG("find_position.sqf",FSTR1("You've reached max attempts (%1) to find mission spawn point. Consider to adjust these variables: 'iben_wai_ACdistance',wai_avoid_missions', 'wai_avoid_traders', 'wai_avoid_town', 'wai_avoid_road' and 'wai_avoid_water'. Think about all traders, water, roads etc.",_maxAttemtps));
+    if (!_validspot && {_y == iben_waiACfindPosLimiter}) exitWith {
+      WBG("find_position.sqf",FSTR1("You've reached max attempts (%1) to find mission spawn point. Consider using option 'use_staticspawnpoints' in your 'config.sqf', or adjust these variables: 'iben_wai_ACdistance',wai_avoid_missions', 'wai_avoid_traders', 'wai_avoid_town', 'wai_avoid_road' and 'wai_avoid_water'. Remember: maps such as 'napf' cannot use 'iben_wai_ACdistance = 1200'. This map is not big enough (measure it yourself and then consider all traders, water, roads etc. Think about it!)",iben_waiACfindPosLimiter));
     };
     // -----------------------------------------------------------------------
   };
