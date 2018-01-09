@@ -4,6 +4,10 @@
 
 ---
 
+**This addon is not my work. [iben][originalauthor] AKA @infobeny gave me permission to keep it available for the DayZ Epoch Community!**
+
+---
+
 [Go to Epoch forum thread][scriptthread]
 
 ---
@@ -340,3 +344,4 @@ if (iben_wai_ACdevmode) then {
 [iwac_01]: https://youtu.be/GziJM75XcuM "Go to source"
 [iwac_02]: https://youtu.be/lppC_MAse8E "Go to source"
 [wai_overlapfix]: https://github.com/worldwidesorrow/Wicked-Ai-Overpoch/commit/7dfbeec4d6fb71c056db4948019d25b73c39a7e6 "Go to source"
+[originalauthor]: https://github.com/infobeny/ "Go to source"
