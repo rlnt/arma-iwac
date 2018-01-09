@@ -274,6 +274,45 @@ _:( ... I know... bye_
 
 ---
 
+<p align="center">--- Later in time... ---</p>
+
+---
+
+> **Q: mr. yeahBUT**<br>
+Hey! IWAC is now part of WAI by default?<br>
+**A: mr. no_name**<br>
+Yes, it is. Since **v1.2**. It's updated for Epoch 1.0.6.2...
+
+---
+
+> **Q: mr. yeahBUT**<br>
+I don't get it... Seems **`v1.3`** is out and it's not the same version as WAI has inside the package. What does it mean?<br>
+**A: mr. no_name**<br>
+Well, it's just a little improvement. Couple days ago several people made a fix for "mission overlapping". We decided to stick with our approach. You don't need to update this version, [WAI default fix will][wai_overlapfix] will work for you in most scenarios just fine. If you meet overlapping problem again in the future (and you could in some scenarios), update to **`v1.3`**.
+If you update to **`v1.3`**, you will get 2 new options in your _**`customsettings.sqf`**_ file (see bellow + detailed info in _`customsettings.sqf`_).
+Now, **what is important:**
+**(a)** _**`iben_wai_ACcoordProtectorTimer`**_ gvar means: _**`"If you give me any value > 0 in seconds, I'm gonna protect your just finished mission area against new mission spawn for given time."`**_
+**(b)** Protection is processed only if: 1 - valid spot for new mission was already found; 2 - there is at least 1 item in `iben_wai_ACprotectedCoord` array (that means, at least one mission was completed and coordinates has to be protected agains new mission spawn).
+**(c) If you decide to update and you don't want use this fix, just set `iben_wai_ACcoordProtectorTimer` value to 0. Default position fnc will be used with default WAI fix (note: if you've already updated your WAI core files).**
+
+```c
+iben_wai_ACcoordProtectorTimer = 300; // @since v1.3
+
+if (iben_wai_ACdevmode) then {
+  iben_waiACfindPosLimiter = 999;     // @since v1.3
+};
+
+// :: If iben_wai_ACcoordProtectorTimer > 0 && iben_wai_ACdevmode is true,
+// :: you will see in your server RPT somenthing like that:
+
+// 19:14:07 "=== [IBEN WAI AUTOCLAIM ADDON, v1.3] || DEBUG [find_position.sqf] >> 'iben_wai_ACcoordProtectorTimer' active (300s) >> Initialising custom position FNC for mission coord protection..."
+// 19:14:07 "=== [IBEN WAI AUTOCLAIM ADDON, v1.3] || DEBUG [IBEN_fnc_AC.sqf] >> Currently protected missions coordinates (iben_wai_ACprotectedCoord) >> [[561.226,[12890.3,11228.4,0.0142517],"MainHero1"]]"
+// 19:14:07 "=== [IBEN WAI AUTOCLAIM ADDON, v1.3] || DEBUG [find_position.sqf] >> Spot found. Checking if spot is in protected coordinates >> iben_wai_ACprotectedCoord >> [[561.226,[12890.3,11228.4,0.0142517],"MainHero1"]]"
+// 19:14:07 "=== [IBEN WAI AUTOCLAIM ADDON, v1.3] || DEBUG [find_position.sqf] >> Loop complete valid position >> [6129.23,8784.35,0] >> in 1/999 attempts"
+```
+
+---
+
 <a name="showcase-links"></a>
 ## Showcase links
 
@@ -300,3 +339,4 @@ _:( ... I know... bye_
 [germanlng]: https://github.com/infobeny/IWAC/pull/1 "Go to source"
 [iwac_01]: https://youtu.be/GziJM75XcuM "Go to source"
 [iwac_02]: https://youtu.be/lppC_MAse8E "Go to source"
+[wai_overlapfix]: https://github.com/worldwidesorrow/Wicked-Ai-Overpoch/commit/7dfbeec4d6fb71c056db4948019d25b73c39a7e6 "Go to source"

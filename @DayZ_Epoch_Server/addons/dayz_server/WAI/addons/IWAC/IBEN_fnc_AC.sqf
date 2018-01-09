@@ -188,8 +188,12 @@ IBEN_fnc_cleanProtectedCoord = {
       iben_wai_ACprotectedCoord set [_forEachIndex, -1];
     };
   } forEach iben_wai_ACprotectedCoord;
-  // -------------------------------------------------------------------------
   iben_wai_ACprotectedCoord = iben_wai_ACprotectedCoord - [-1];
+  // -------------------------------------------------------------------------
+  if (iben_wai_ACdevmode) then {
+    DBG("IBEN_fnc_AC.sqf",FSTR1("Currently protected missions coordinates (iben_wai_ACprotectedCoord) >> %1",iben_wai_ACprotectedCoord));
+  };
+  // -------------------------------------------------------------------------
   _ret = (count iben_wai_ACprotectedCoord);
   // -------------------------------------------------------------------------
   _ret

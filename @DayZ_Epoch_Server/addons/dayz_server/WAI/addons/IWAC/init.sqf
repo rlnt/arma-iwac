@@ -14,13 +14,16 @@ if (isServer) then {
   private ["_marker","_unitGroup","_b_missionTime","_h_missionTime",
   "_h_startTime","_b_startTime","_result","_cnt","_currTime","_mission"];
   // -------------------------------------------------------------------------
-  diag_log "WAI: Initialising missions with IBEN AUTOCLAIM ADDON";
+  DBG("missions init.sqf",FSTR1("%1","Initialising missions with IBEN AUTOCLAIM ADDON..."));
   // -------------------------------------------------------------------------
   CCP(compile,position_functions);
   CPP(patrol,compile,patrol);
   CPP(minefield,compile,minefield);
   CPP(custom_publish,compile,custom_publish_vehicle);
   // -------------------------------------------------------------------------
+  if (iben_wai_ACcoordProtectorTimer > 0) then {
+    CPP(find_position,addons\IWAC,find_position);                             // IWAC
+  };
   CCP(addons\IWAC,IBEN_fnc_AC);                                               // IWAC
   CPP(mission_init,addons\IWAC,mission_init);                                 // IWAC
   CPP(mission_winorfail,addons\IWAC,mission_winorfail);                       // IWAC

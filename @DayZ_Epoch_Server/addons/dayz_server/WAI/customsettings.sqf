@@ -135,9 +135,12 @@ if (isServer) then {
   //    Mostly if you are using static spawn points with lower number of static points
   //    and higher number of concurrent mission over the map. It's rare, but this issue
   //    was already reported before.
-  // >> Set to 0 if you don't want to use this kind of protection.
-  // >> If you set > 0, mission coordinates stays protected from another mission spawn
+  //    -----------------------------
+  // >> Set value to 0 if you don't want to use this kind of protection.
+  //    -----------------------------
+  // >> If you set value > 0 (in seconds), mission coordinates stays protected from another mission spawn
   //    in 'wai_avoid_missions' radius for given time in seconds.
+  //    -----------------------------
   // >> Check is very performace friendly. It's applied only in case 'iben_wai_ACcoordProtectorTimer' > 0
   //    and 'iben_wai_ACprotectedCoord' array is not empy!
   // >> @for dev: this solution should stay as temp fix. This should be fixed in WAI core
@@ -167,7 +170,7 @@ if (isServer) then {
     // :: If you will get RPT (server) info about reaching limit, think what
     //    needs to be done - (a) increase limit?; or (b) adjust values? (see RPT log which one)
     // :: There is no good general advice - depends on map, custom traders etc. That is why
-    //    I set lower attemt 50 as default - to be sure you're warned in time about fact,
+    //    I set lower attemt 200 as default - to be sure you're warned in time about fact,
     //    WAI has to cycle hard to get mission spawn position.
     // :: You can set 'iben_wai_ACdevmode' to true and adjust 'iben_waiACfindPosLimiter'
     //    for testing.

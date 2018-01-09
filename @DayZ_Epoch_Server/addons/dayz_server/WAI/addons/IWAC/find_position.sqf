@@ -12,6 +12,9 @@ if (isServer) then {
   #include "defines.hpp"
 
   // -------------------------------------------------------------------------
+  DBG("find_position.sqf",FSTR1("'iben_wai_ACcoordProtectorTimer' active (%1s) >> Initialising custom position FNC for mission coord protection...",iben_wai_ACcoordProtectorTimer));
+
+  // -------------------------------------------------------------------------
   private ["_validspot","_attempt"];
   markerready = false;
   _validspot  = false;

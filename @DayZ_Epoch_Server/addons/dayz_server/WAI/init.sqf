@@ -21,10 +21,7 @@ if (isServer) then {
   dynamic_crate = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\dynamic_crate.sqf";
   ai_monitor = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\ai_monitor.sqf";
   vehicle_monitor = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\vehicle_monitor.sqf";
-  // ---------------------------------------------------------------------------
-  // :: IWAC
-  find_position = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\addons\IWAC\find_position.sqf";
-  // ---------------------------------------------------------------------------
+  find_position = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\find_position.sqf";
   load_ammo = compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\load_ammo.sqf";
   call compile preprocessFileLineNumbers "\z\addons\dayz_server\WAI\compile\functions.sqf";
   if (isNil("DZMSInstalled")) then {
