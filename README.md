@@ -339,8 +339,8 @@ if (iben_wai_ACdevmode) then {
 
 [scriptthread]: https://epochmod.com/forum/topic/44646-iwac-autoclaim-addon-for-wai-v10/ "Go to source"
 [epochdevs]: https://github.com/EpochModTeam/DayZ-Epoch "Go to source"
-[remotemsg]: https://github.com/infobeny/ZSC/blob/master/dayz_code/compile/remote_message.sqf "Go to source"
-[germanlng]: https://github.com/infobeny/IWAC/pull/1 "Go to source"
+[remotemsg]: https://github.com/oiad/ZSC/blob/master/dayz_code/compile/remote_message.sqf "Go to source"
+[germanlng]: https://github.com/DAmNRelentless/IWAC/commit/1f48d139670a13f094484199d002019a60fe65d0 "Go to source"
 [iwac_01]: https://youtu.be/GziJM75XcuM "Go to source"
 [iwac_02]: https://youtu.be/lppC_MAse8E "Go to source"
 [wai_overlapfix]: https://github.com/worldwidesorrow/Wicked-Ai-Overpoch/commit/7dfbeec4d6fb71c056db4948019d25b73c39a7e6 "Go to source"
