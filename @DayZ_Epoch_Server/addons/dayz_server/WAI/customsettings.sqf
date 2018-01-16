@@ -1,7 +1,7 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> customsettings.sqf
 // ===========================================================================
-// [last update: 2018-01-05]
+// [last update: 2018-01-13]
 // ===========================================================================
 // created by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
@@ -166,15 +166,27 @@ if (isServer) then {
   if (iben_wai_ACdevmode) then {
     wai_mission_timeout = [500,600];
     wai_mission_timer = [130,140];
-    // :: find_position attempts limiter >> default 200.
+    // :: find_position attempts limiter >> default 500.
+    //    -----------------------------
     // :: If you will get RPT (server) info about reaching limit, think what
     //    needs to be done - (a) increase limit?; or (b) adjust values? (see RPT log which one)
+    //    -----------------------------
     // :: There is no good general advice - depends on map, custom traders etc. That is why
-    //    I set lower attemt 200 as default - to be sure you're warned in time about fact,
+    //    I set lower attemt 500 as default - to be sure you're warned in time about fact,
     //    WAI has to cycle hard to get mission spawn position.
+    //    -----------------------------
+    // :: IMPORTANT: If you reach default limit, current random spawn point processed by
+    //    "find_position" fnc will be used as valid spot and mission will spawn in "overlapping mode"
+    //    so you can see visualy somenthing went wrong. This situation is telling you:
+    //    "WAI has to work hard to find valid spot for my next mission. Because I don't
+    //    want to degrade my server performance, I should go to check server RPT - there is
+    //    info for me, which values I'm suppose to consider to optimize my setup."
+    //    For example (using static spawn points): you will see in server RPT:
+    //    "=== [IBEN WAI AUTOCLAIM ADDON, v1.3.1] || DEBUG [find_position.sqf] >> You have reached max attempts (500) to find mission spawn point. Consider to adjust these variables: 'iben_wai_ACdistance', 'wai_avoid_missions', 'wai_avoid_traders', 'wai_avoid_town', 'wai_avoid_road' and 'wai_avoid_water'. Think about all traders, water, roads etc."
+    //    -----------------------------
     // :: You can set 'iben_wai_ACdevmode' to true and adjust 'iben_waiACfindPosLimiter'
     //    for testing.
-    iben_waiACfindPosLimiter = 999; // @since v1.3
+    iben_waiACfindPosLimiter = 500; // @since v1.3
   };
 
   // -------------------------------------------------------------------------

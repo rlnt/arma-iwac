@@ -1,3 +1,12 @@
+// ===========================================================================
+// [IWAC] IBEN WAI AUTOCLAIM >> remote_message.sqf
+// ===========================================================================
+// [last update: 2018-01-13]
+// ===========================================================================
+// Original file source: ZSC by @salival
+// Original file link :https://github.com/oiad/ZSC/blob/master/dayz_code/compile/remote_message.sqf
+// Extended by @iben for WAI, DayZ Epoch 1.0.6.2
+// ===========================================================================
 fnc_remote_message = {
   private ["_type","_message"];
   _type = _this select 0;

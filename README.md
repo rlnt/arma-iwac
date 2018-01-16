@@ -4,7 +4,7 @@
 
 ---
 
-**This addon is not my work. [iben][originalauthor] AKA @infobeny gave me permission to keep it available for the DayZ Epoch Community!**
+**Last update: [2017-01-13], v1.3.1 (Updated for Epoch 1.0.6.2 & WAI 2.2.3)** ([see changelog](#changelog))
 
 ---
 
@@ -20,9 +20,10 @@
 + **Markk311**, **f3cuk**, **Jossy**, **BangL**, **nerdalertdk**, **Caveman** - creators of this system
 + **JasonTM**, **salival**, **ebayShopper** - for keeping system alive, further developing and fantastic support
 + Special thx goes to:
-  + **salival** for his [ZSC remote msg script][remotemsg] which we are using
+  + **Lance** for deep addon testing and most usefull feedback. Thanks to him we know, how IWAC works under heavy load on populated server (12 concurrent missions :))
   + **totis**, who brings great ideas into this script and did a great tester job!
   + **DAmNRelentless** for [offering German translation][germanlng]
+  + **salival** for his [ZSC remote msg script][remotemsg] which we are using
   + **... all great guys helping make WAI better (I'm pretty sure I forgot a lot of people...). Thank you all for your great job!**
 
 ---
@@ -30,6 +31,7 @@
 <!-- MarkdownTOC -->
 
 - [Introduction](#introduction)
+- [Later in time...](#later-in-time)
 - [Showcase links](#showcase-links)
 - [Changelog](#changelog)
 
@@ -278,7 +280,8 @@ _:( ... I know... bye_
 
 ---
 
-<p align="center">--- Later in time... ---</p>
+<a name="later-in-time"></a>
+## Later in time...
 
 ---
 
@@ -290,14 +293,14 @@ Yes, it is. Since **v1.2**. It's updated for Epoch 1.0.6.2...
 ---
 
 > **Q: mr. yeahBUT**<br>
-I don't get it... Seems **`v1.3`** is out and it's not the same version as WAI has inside the package. What does it mean?<br>
+I don't get it... Seems **`v1.3.1`** is out and it's not the same version as WAI has inside the package. What does it mean?<br>
 **A: mr. no_name**<br>
-Well, it's just a little improvement. Couple days ago several people made a fix for "mission overlapping". We decided to stick with our approach. You don't need to update this version, [WAI default fix will][wai_overlapfix] will work for you in most scenarios just fine. If you meet overlapping problem again in the future (and you could in some scenarios), update to **`v1.3`**.
-If you update to **`v1.3`**, you will get 2 new options in your _**`customsettings.sqf`**_ file (see bellow + detailed info in _`customsettings.sqf`_).
+Well, it's just a little improvement. Couple days ago several people made a fix for "mission overlapping". We decided to stick with our approach.
+If you update to **`v1.3.1`**, you will get 2 new options in your _**`customsettings.sqf`**_ file (see bellow + detailed info in _`customsettings.sqf`_).
 Now, **what is important:**
 **(a)** _**`iben_wai_ACcoordProtectorTimer`**_ gvar means: _**`"If you give me any value > 0 in seconds, I'm gonna protect your just finished mission area against new mission spawn for given time."`**_
 **(b)** Protection is processed only if: 1 - valid spot for new mission was already found; 2 - there is at least 1 item in `iben_wai_ACprotectedCoord` array (that means, at least one mission was completed and coordinates has to be protected agains new mission spawn).
-**(c) If you decide to update and you don't want use this fix, just set `iben_wai_ACcoordProtectorTimer` value to 0. Default position fnc will be used with default WAI fix (note: if you've already updated your WAI core files).**
+**(c) If you decide to update and you don't want use this fix, just set `iben_wai_ACcoordProtectorTimer` value to 0. Default position fnc will be used with [default WAI fix][wai_overlapfix] (note: if you've already updated your WAI core files).**
 
 ```c
 iben_wai_ACcoordProtectorTimer = 300; // @since v1.3
@@ -328,12 +331,13 @@ if (iben_wai_ACdevmode) then {
 <a name="changelog"></a>
 ## Changelog
 
-| Date         | Version | Description                                                                                           |
-| :---         | :---    | :---                                                                                                  |
-| [2017-11-07] | v1.0    | Initial release                                                                                       |
-| [2017-11-29] | v1.1    | Improved: safe way to load custom settings (init.sqf)                                                 |
-| [2018-12-31] | v1.2    | Updated to Epoch 1.0.6.2 & WAI 2.2.2                                                                  |
-| [2018-01-05] | v1.3    | Mission overlapping fix                                                                               |
+| Date         | Version | Description                                                                                                |
+| :---         | :---    | :---                                                                                                       |
+| [2017-11-07] | v1.0    | Initial release                                                                                            |
+| [2017-11-29] | v1.1    | Improved: safe way to load custom settings (init.sqf)                                                      |
+| [2018-12-31] | v1.2    | Updated to Epoch 1.0.6.2 & WAI 2.2.2                                                                       |
+| [2018-01-05] | v1.3    | Mission overlapping fix                                                                                    |
+| [2018-01-16] | v1.3.1  | 'iben_waiACfindPosLimiter' increased to 500 (default). Safe option for huge number of concurrent missions. |
 
 ---
 

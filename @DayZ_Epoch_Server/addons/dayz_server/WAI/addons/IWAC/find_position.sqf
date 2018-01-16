@@ -1,7 +1,7 @@
 // ===========================================================================
 // [IWAC] IBEN WAI AUTOCLAIM >> find_position.sqf
 // ===========================================================================
-// [last update: 2018-01-05]
+// [last update: 2018-01-13]
 // ===========================================================================
 // Extended for IWAC by @iben for WAI, DayZ Epoch 1.0.6.2
 // ===========================================================================
@@ -18,7 +18,7 @@ if (isServer) then {
   private ["_validspot","_attempt"];
   markerready = false;
   _validspot  = false;
-  if (isNil "iben_waiACfindPosLimiter") then {iben_waiACfindPosLimiter = 200};
+  if (isNil "iben_waiACfindPosLimiter") then {iben_waiACfindPosLimiter = 500};
   _attempt = 0;
 
   // -------------------------------------------------------------------------
@@ -58,7 +58,7 @@ if (isServer) then {
       };
       // ---------------------------------------------------------------------
       if (!_validspot && {_i == iben_waiACfindPosLimiter}) exitWith {
-        WBG("find_position.sqf",FSTR1("You've reached max attempts (%1) to find mission spawn point. Consider to adjust these variables: 'iben_wai_ACdistance',wai_avoid_missions', 'wai_avoid_traders', 'wai_avoid_town', 'wai_avoid_road' and 'wai_avoid_water'. Think about all traders, water, roads etc.",iben_waiACfindPosLimiter));
+        WBG("find_position.sqf",FSTR1("You have reached max attempts (%1) to find mission spawn point. Consider to adjust these variables: iben_wai_ACdistance, wai_avoid_missions, wai_avoid_traders, wai_avoid_town, wai_avoid_road and wai_avoid_water. Think about all traders, water, roads etc.",iben_waiACfindPosLimiter));
       };
       // ---------------------------------------------------------------------
     };
@@ -144,7 +144,7 @@ if (isServer) then {
     };
     // ---------------------------------------------------------------------
     if (!_validspot && {_y == iben_waiACfindPosLimiter}) exitWith {
-      WBG("find_position.sqf",FSTR1("You've reached max attempts (%1) to find mission spawn point. Consider using option 'use_staticspawnpoints' in your 'config.sqf', or adjust these variables: 'iben_wai_ACdistance',wai_avoid_missions', 'wai_avoid_traders', 'wai_avoid_town', 'wai_avoid_road' and 'wai_avoid_water'. Remember: maps such as 'napf' cannot use 'iben_wai_ACdistance = 1200'. This map is not big enough (measure it yourself and then consider all traders, water, roads etc. Think about it!)",iben_waiACfindPosLimiter));
+      WBG("find_position.sqf",FSTR1("You have reached max attempts (%1) to find mission spawn point. Consider using option use_staticspawnpoints in your config.sqf, or adjust these variables: iben_wai_ACdistance, wai_avoid_missions, wai_avoid_traders, wai_avoid_town, wai_avoid_road and wai_avoid_water. Remember: maps such as napf cannot use iben_wai_ACdistance = 1200. This map is not big enough (measure it yourself and then consider all traders, water, roads etc. Think about it!)",iben_waiACfindPosLimiter));
     };
     // -----------------------------------------------------------------------
   };
