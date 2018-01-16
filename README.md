@@ -1,10 +1,10 @@
 # IWAC - addon for WAI Mission System
 
-**Last update: [2017-01-05], v1.3 (Updated for Epoch 1.0.6.2 & WAI 2.2.2)** ([see changelog](#changelog))
+**Last update: [2017-01-13], v1.3.1 (Updated for Epoch 1.0.6.2 & WAI 2.2.3)** ([see changelog](#changelog))
 
 ---
 
-**Last update: [2017-01-13], v1.3.1 (Updated for Epoch 1.0.6.2 & WAI 2.2.3)** ([see changelog](#changelog))
+**This addon is not my work. [iben][originalauthor] AKA @infobeny gave me permission to keep it available for the DayZ Epoch Community!**
 
 ---
 
